@@ -9,8 +9,6 @@ function Clientlist() {
     
 
     const [clients, setClients] = useState([]);
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
     
     useEffect(() => {
         getClients();
