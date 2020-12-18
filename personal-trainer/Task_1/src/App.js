@@ -9,6 +9,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
 import MenuIcon from '@material-ui/icons/Menu';
+import PeopleIcon from '@material-ui/icons/People';
+import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
 
 
 import Drawer from '@material-ui/core/Drawer';
@@ -64,11 +66,13 @@ function App() {
     >
       <List>
         <ListItem button onClick={() => setValue("Customers")}>
-          <ListItemText primary="Customers" />
+          <PeopleIcon/>
+          <ListItemText primary="Customers" style={{margin:5}}/>
         </ListItem>
         <Divider/>
         <ListItem button onClick={() => setValue("Training")}>
-          <ListItemText primary="Training" />
+          <DirectionsRunIcon/>
+          <ListItemText primary="Training" style={{margin:5}}/>
         </ListItem>
         <Divider/>  
       </List>
