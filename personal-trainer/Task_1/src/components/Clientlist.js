@@ -5,23 +5,12 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 
-
-
-
 function Clientlist() {
     
 
     const [clients, setClients] = useState([]);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
     
     useEffect(() => {
         getClients();
@@ -49,7 +38,7 @@ function Clientlist() {
     return(
         <div>
             <h3>Customers</h3>
-            <div className="ag-theme-material" style={ { height: 600, width: '100%', margin: 'auto' } }>
+            <div className="ag-theme-material" style={ { height: 600, width: '90%', margin: 'auto' } }>
                 <AgGridReact
                     rowData={clients}
                     columnDefs={columns}

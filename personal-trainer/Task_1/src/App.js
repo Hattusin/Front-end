@@ -8,8 +8,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-
-
 import MenuIcon from '@material-ui/icons/Menu';
 
 
@@ -36,7 +34,7 @@ const useStyles = makeStyles({
 
 
 function App() {
-  const [value, setValue] = React.useState('Training');
+  const [value, setValue] = React.useState('Customers');
  
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -54,9 +52,6 @@ function App() {
     setState({ ...state, [anchor]: open });
   };
 
-  const handleChange = (event, value) => {
-    setValue(value);
-}
 
   const list = (anchor) => (
     <div
@@ -68,18 +63,18 @@ function App() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Customers', 'Training'].map((text, index) => (
-          <ListItem button key={text} onClick={() => setValue(text)}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      
+        <ListItem button onClick={() => setValue("Customers")}>
+          <ListItemText primary="Customers" />
+        </ListItem>
+        <Divider/>
+        <ListItem button onClick={() => setValue("Training")}>
+          <ListItemText primary="Training" />
+        </ListItem>
+        <Divider/>  
       </List>
     </div>
   );
 
-  
- 
   return (
     
     <div className="App">

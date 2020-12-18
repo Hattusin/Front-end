@@ -8,7 +8,6 @@ import moment from 'moment';
 
 
 function Training() {
-    
 
     const [training, setTrainings] = useState([]);
     
@@ -26,11 +25,9 @@ function Training() {
 
 
     const columns = [
-        {field: 'customer.lastname' , field: 'customer.firstname',  headerName: 'Customer Firstname', sortable: true, filter: true,
+        {field: 'customer.lastname', field:'cutomer.firstname', headerName: 'Customer Firstname', sortable: true, filter: true,
         cellRenderer: params => {
-            var firstname = params.getValue('customer.firstname');
-            var lastname = params.getValue('customer.lastname');
-            return (firstname + " " + lastname);
+            return params.data.customer.firstname + ' ' + params.data.customer.lastname
         }},
         //{field: 'customer.lastname', headerName: 'Customer Lastname', sortable: true, filter: true},
         {field: 'duration', headerName:'Duration (min)',  sortable: true, filter: true},
@@ -45,7 +42,7 @@ function Training() {
     return(
         <div>
             <h3>Training</h3>
-            <div className="ag-theme-material" style={ { height: 600, width: '70%', margin: 'auto' } }>
+            <div className="ag-theme-material" style={ { height: 600, width: '50%', margin: 'auto' } }>
                 <AgGridReact
                     rowData={training}
                     columnDefs={columns}
